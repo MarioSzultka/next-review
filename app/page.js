@@ -1,5 +1,6 @@
 "use client";
 import { useEffect } from "react";
+import Heading from "../components/Heading";
 
 const HomePage = () => {
   useEffect(() => {
@@ -7,7 +8,7 @@ const HomePage = () => {
   }, []);
   return (
     <>
-      <h1>Indie Gamer</h1>
+      <Heading>Indie Gamer</Heading>
       <p>Only the best indie games, reviewed for you</p>
     </>
   );

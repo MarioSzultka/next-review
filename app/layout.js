@@ -1,37 +1,18 @@
-import Link from "next/link";
-import "./globals.css";
+import "./styles/globals.css";
 
+//Components
+import Navigation from "../components/Navigation/Navigation";
+import Footer from "../components/Footer/Footer";
 export default function RootLayout(props) {
   const { children } = props;
 
   return (
     <html lang="en">
-      <body>
-        <header>
-          <nav>
-            <ul>
-              <li>
-                <Link href="/">Home</Link>
-              </li>
-              <li>
-                <Link href="/reviews">Reviews</Link>
-              </li>
-              <li>
-                <Link href="/about" prefetch={false}>
-                  About us
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        </header>
+      <body className="container mx-auto flex flex-col min-h-screen bg-orange-800">
+        <header>{<Navigation />}</header>
 
-        <main>{children}</main>
-        <footer>
-          Game data and images courtesy{" "}
-          <a href="http://rawg.io" target="_black">
-            RAWG
-          </a>
-        </footer>
+        <main className="py-3 grow">{children}</main>
+        <Footer />
       </body>
     </html>
   );

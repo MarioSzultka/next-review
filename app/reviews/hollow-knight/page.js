@@ -1,7 +1,9 @@
+import Heading from "../../../components/Heading";
+
 const HollowKnightPage = () => {
   return (
     <>
-      <h1>Hollow-Knight Page</h1>
+      <Heading>Hollow-Knight Page</Heading>
       <p>Review Hollow-Knight Page</p>
     </>
   );

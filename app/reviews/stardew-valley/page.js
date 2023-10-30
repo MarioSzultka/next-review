@@ -1,7 +1,8 @@
+import Heading from "../../../components/Heading";
 const StardewValleyPage = () => {
   return (
     <>
-      <h1>Stardew Valley Page</h1>
+      <Heading>Stardew Valley Page</Heading>
       <p>Review Stardew Valley Page</p>
     </>
   );
