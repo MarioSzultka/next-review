@@ -4,11 +4,14 @@ const Navigation = () => {
     <nav>
       <ul className="flex gap-x-2">
         <li>
-          <Link className="text-orange-200 hover:underline" href="/">
+          <Link
+            className="text-orange-200 hover:underline font-orbitron font-bold"
+            href="/"
+          >
             Home
           </Link>
         </li>
-        <li>
+        <li className="ml-auto">
           <Link className="text-orange-200 hover:underline" href="/reviews">
             Reviews
           </Link>
