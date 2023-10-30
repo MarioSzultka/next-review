@@ -8,7 +8,7 @@ export default function RootLayout(props) {
 
   return (
     <html lang="en">
-      <body className="container mx-auto flex flex-col min-h-screen bg-orange-800">
+      <body className="container px-1 md:px-0 mx-auto flex flex-col min-h-screen bg-orange-800">
         <header>{<Navigation />}</header>
 
         <main className="py-3 grow">{children}</main>
