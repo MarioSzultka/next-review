@@ -1,4 +1,6 @@
 import Link from "next/link";
+import "./globals.css";
+
 export default function RootLayout(props) {
   const { children } = props;
 
@@ -15,14 +17,21 @@ export default function RootLayout(props) {
                 <Link href="/reviews">Reviews</Link>
               </li>
               <li>
-                <Link href="/about">About us</Link>
+                <Link href="/about" prefetch={false}>
+                  About us
+                </Link>
               </li>
             </ul>
           </nav>
         </header>
 
         <main>{children}</main>
-        <footer>[footer]</footer>
+        <footer>
+          Game data and images courtesy{" "}
+          <a href="http://rawg.io" target="_black">
+            RAWG
+          </a>
+        </footer>
       </body>
     </html>
   );
