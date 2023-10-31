@@ -5,20 +5,20 @@ const Navigation = () => {
       <ul className="flex gap-x-2">
         <li>
           <Link
-            className="text-orange-200 hover:underline font-orbitron font-bold"
+            className="text-black hover:underline font-orbitron font-bold"
             href="/"
           >
             Home
           </Link>
         </li>
         <li className="ml-auto">
-          <Link className="text-orange-200 hover:underline" href="/reviews">
+          <Link className="text-black hover:underline" href="/reviews">
             Reviews
           </Link>
         </li>
         <li>
           <Link
-            className="text-orange-200 hover:underline"
+            className="text-black hover:underline"
             href="/about"
             prefetch={false}
           >
