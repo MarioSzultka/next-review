@@ -2,7 +2,7 @@ import Link from "next/link";
 const Navigation = () => {
   return (
     <nav>
-      <ul className="flex gap-x-2">
+      <ul className="flex gap-x-2 text-2xl">
         <li>
           <Link
             className="text-black hover:underline font-orbitron font-bold"
@@ -17,11 +17,7 @@ const Navigation = () => {
           </Link>
         </li>
         <li>
-          <Link
-            className="text-black hover:underline"
-            href="/about"
-            prefetch={false}
-          >
+          <Link className="text-black hover:underline" href="/about">
             About us
           </Link>
         </li>

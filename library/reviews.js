@@ -22,3 +22,22 @@ export async function getReviews() {
     .map((item) => item.slice(0, -".md".length));
   return files;
 }
+
+export async function getSlugs(folderName, extension) {
+  const documents = await readdir(folderName);
+  const files = documents
+    .filter((items) => items.endsWith(extension))
+    .map((fileName) => {
+      fileName.slice(0, -extension.length);
+    });
+
+  return files;
+}
+
+export function getNewestReview(array) {
+  return array.sort((a, b) => {
+    const aDate = new Date(a.date);
+    const bDate = new Date(b.date);
+    return bDate - aDate;
+  });
+}

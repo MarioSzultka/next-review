@@ -2,6 +2,11 @@ import Link from "next/link";
 import Heading from "@/components/Heading";
 import Image from "@/components/Images/Image";
 import { getReview, getReviews } from "@/library/reviews";
+
+export const metadata = {
+  title: "Reviews Pages",
+};
+
 const ReviewsPage = async () => {
   const files = await getReviews();
 

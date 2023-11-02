@@ -5,6 +5,14 @@ import Footer from "../components/Footer/Footer";
 import "./styles/globals.css";
 import { orbitron, exo2 } from "./fonts";
 
+export const metadata = {
+  title: {
+    template: "%s | Acme",
+    default: "Acme", // a default is required when creating a template
+  },
+  description: "Opis strony www",
+};
+
 export default function RootLayout(props) {
   const { children } = props;
 
