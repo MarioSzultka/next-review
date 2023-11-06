@@ -12,32 +12,40 @@ export async function getReview(slug) {
 
   const body = marked(content);
 
-  return { title, date, image, body };
+  return { title, date, image, body, slug };
 }
 
 export async function getReviews() {
-  const items = await readdir("./content/reviews");
-  const files = items
-    .filter((item) => item.endsWith(".md"))
-    .map((item) => item.slice(0, -".md".length));
-  return files;
-}
+  const slugs = await getSlugs("./content/reviews", ".md");
+  //console.log(["Slugs to:", slugs]);
 
-export async function getSlugs(folderName, extension) {
-  const documents = await readdir(folderName);
-  const files = documents
-    .filter((items) => items.endsWith(extension))
-    .map((fileName) => {
-      fileName.slice(0, -extension.length);
-    });
+  const reviews = [];
+  for (const slug of slugs) {
+    const review = await getReview(slug);
+    reviews.push(review);
+  }
 
-  return files;
-}
-
-export function getNewestReview(array) {
-  return array.sort((a, b) => {
+  reviews.sort((a, b) => {
     const aDate = new Date(a.date);
     const bDate = new Date(b.date);
     return bDate - aDate;
   });
+
+  //console.log(["Reviews to:"], reviews);
+  return reviews;
+}
+
+export async function getSlugs(folderName, extension) {
+  const documents = await readdir(folderName);
+  //console.log(["Documents to", documents]);
+  const files = documents
+    .filter((items) => {
+      //console.log(["Items to", items]);
+      return items.endsWith(extension);
+    })
+    .map((fileName) => {
+      return fileName.slice(0, -extension.length);
+    });
+  //console.log(["Files to", files]);
+  return files;
 }

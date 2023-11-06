@@ -1,20 +1,11 @@
 import Link from "next/link";
 import Heading from "@/components/Heading";
 import Image from "@/components/Images/Image";
-import { getReviews, getReview, getNewestReview } from "@/library/reviews";
+import { getReviews } from "@/library/reviews";
 
 const HomePage = async () => {
-  const files = await getReviews();
+  const { title, image, date } = await getReviews().then((data) => data[0]);
 
-  const reviews = [];
-  for (const item of files) {
-    const review = await getReview(item);
-    reviews.push(review);
-  }
-
-  const newestReview = getNewestReview(reviews);
-
-  const { title, date, image, body } = newestReview[0];
   return (
     <>
       <Heading>Indie Gamer</Heading>
