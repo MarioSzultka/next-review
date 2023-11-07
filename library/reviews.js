@@ -1,6 +1,8 @@
-import { readdir, readFile } from "node:fs/promises";
+import { readdir, readFile, writeFileSync } from "node:fs/promises";
+import qs from "qs";
 import matter from "gray-matter";
 import { marked } from "marked";
+const CMS_URL = "http://localhost:1337";
 
 export async function getReview(slug) {
   const text = await readFile(`./content/reviews/${slug}.md`);
@@ -16,22 +18,27 @@ export async function getReview(slug) {
 }
 
 export async function getReviews() {
-  const slugs = await getSlugs("./content/reviews", ".md");
-  //console.log(["Slugs to:", slugs]);
+  const query = qs.stringify({
+    fields: ["slug", "title", "publishedAt"],
+    populate: { image: { fields: ["url"] } },
+    pagination: { pageSize: 6 },
+    sort: ["publishedAt:desc"],
+  });
+  const url = `${CMS_URL}/api/reviews?${query}`;
+  const response = await fetch(url);
+  const { data } = await response.json();
 
   const reviews = [];
-  for (const slug of slugs) {
-    const review = await getReview(slug);
-    reviews.push(review);
-  }
-
-  reviews.sort((a, b) => {
-    const aDate = new Date(a.date);
-    const bDate = new Date(b.date);
-    return bDate - aDate;
+  data.map((item) => {
+    const element = {
+      slug: item.attributes.slug,
+      title: item.attributes.title,
+      date: item.attributes.publishedAt.slice(0, "xxxx-xx-xx".length),
+      image: CMS_URL + item.attributes.image.data.attributes.url,
+    };
+    reviews.push(element);
   });
-
-  //console.log(["Reviews to:"], reviews);
+  console.log(reviews);
   return reviews;
 }
 

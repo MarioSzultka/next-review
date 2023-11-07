@@ -2,6 +2,8 @@
 import Navigation from "../components/Navigation/Navigation";
 import Footer from "../components/Footer/Footer";
 
+import "bootstrap/dist/css/bootstrap.min.css";
+
 import "./styles/globals.css";
 import { orbitron, exo2 } from "./fonts";
 

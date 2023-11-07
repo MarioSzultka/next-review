@@ -1,8 +1,114 @@
 {
-  "data": null,
-  "error": {
-    "status": 500,
-    "name": "InternalServerError",
-    "message": "Internal Server Error"
+  "data": [
+    {
+      "id": 18,
+      "attributes": {
+        "slug": "what-remains-of-edith-finch",
+        "title": "What Remains of Edith Finch",
+        "subtitle": "An Emotionally Captivating Masterpiece",
+        "publishedAt": "2023-05-17T11:00:00.000Z",
+        "image": {
+          "data": {
+            "id": 18,
+            "attributes": {
+              "url": "/uploads/what_remains_of_edith_finch_b4f0be5dda.jpg"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 10,
+      "attributes": {
+        "slug": "warhammer-vermintide-2",
+        "title": "Warhammer: Vermintide 2",
+        "subtitle": "A Stunning Co-op Action Experience",
+        "publishedAt": "2023-05-22T11:00:00.000Z",
+        "image": {
+          "data": {
+            "id": 10,
+            "attributes": {
+              "url": "/uploads/warhammer_vermintide_2_0634bcc7ee.jpg"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 19,
+      "attributes": {
+        "slug": "the-witness",
+        "title": "The Witness",
+        "subtitle": "A Mesmerizing Puzzle Adventure",
+        "publishedAt": "2023-05-05T11:00:00.000Z",
+        "image": {
+          "data": {
+            "id": 19,
+            "attributes": {
+              "url": "/uploads/the_witness_e0d8420e38.jpg"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 17,
+      "attributes": {
+        "slug": "subnautica",
+        "title": "Subnautica",
+        "subtitle": "An Oceanic Masterpiece That Plunges Players into an Immersive Underwater World",
+        "publishedAt": "2023-05-20T11:00:00.000Z",
+        "image": {
+          "data": {
+            "id": 17,
+            "attributes": {
+              "url": "/uploads/subnautica_049e8332de.jpg"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 2,
+      "attributes": {
+        "slug": "stardew-valley",
+        "title": "Stardew Valley",
+        "subtitle": "A Tranquil Oasis of Farming and Adventure",
+        "publishedAt": "2023-05-09T11:00:00.000Z",
+        "image": {
+          "data": {
+            "id": 2,
+            "attributes": {
+              "url": "/uploads/stardew_valley_a268200e49.jpg"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 20,
+      "attributes": {
+        "slug": "superhot",
+        "title": "SUPERHOT",
+        "subtitle": "An Innovative and Immersive Time-Bending Thriller",
+        "publishedAt": "2023-05-08T11:00:00.000Z",
+        "image": {
+          "data": {
+            "id": 20,
+            "attributes": {
+              "url": "/uploads/superhot_ee1bcf99b0.jpg"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "page": 1,
+      "pageSize": 6,
+      "pageCount": 5,
+      "total": 25
+    }
   }
 }
