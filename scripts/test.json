@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Hollow Knight",
+    "date": "2024-05-04",
+    "image": "/images/hollow-knight.jpg",
+    "body": "<p><strong>Hollow Knight</strong> Lorem ipsum dolor sit, amet conse ctetur adip isici ng elit. Ma gni illum eum autem asper natur sit? Tempora minima molli tia, culpa cumque atque, repe llat veniam maiores num quam libero fugit volu ptatibus nisi ipsa aliquid.</p>\n",
+    "slug": "hollow-knight"
+  },
+  {
+    "title": "Stardew Valley",
+    "date": "2023-05-04",
+    "image": "/images/stardew-valley.jpg",
+    "body": "<p><strong>Stardew Valley</strong> Lorem ipsum dolor sit, amet conse ctetur adip isici ng elit. Ma gni illum eum autem asper natur sit? Tempora minima molli tia, culpa cumque atque, repe llat veniam maiores num quam libero fugit volu ptatibus nisi ipsa aliquid.</p>\n",
+    "slug": "stardew-valley"
+  },
+  {
+    "title": "Hell Blade",
+    "date": "2014-04-04",
+    "image": "/images/hellblade.jpg",
+    "body": "<p><strong>Hell Blade</strong> Lorem ipsum dolor sit, amet conse ctetur adip isici ng elit. Ma gni illum eum autem asper natur sit? Tempora minima molli tia, culpa cumque atque, repe llat veniam maiores num quam libero fugit volu ptatibus nisi ipsa aliquid.</p>\n",
+    "slug": "hellblade"
+  }
+]
