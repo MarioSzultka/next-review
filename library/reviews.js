@@ -33,6 +33,7 @@ function toReview(item) {
     slug: attributes.slug,
     title: attributes.title,
     date: attributes.publishedAt.slice(0, "xxxx-xx-xx".length),
+    subtitle: attributes.subtitle,
     image: CMS_URL + attributes.image.data.attributes.url,
   };
 }
@@ -45,7 +46,7 @@ export async function getReview(slug) {
           $eq: slug,
         },
       },
-      fields: ["title", "publishedAt", "body"],
+      fields: ["title", "publishedAt", "body", "subtitle"],
       populate: { image: { fields: ["url"] } },
     },
     "reviews"
@@ -59,12 +60,12 @@ export async function getReview(slug) {
   };
 }
 
-export async function getReviews() {
+export async function getReviews(pageSize) {
   const data = await fetchReviews(
     {
-      fields: ["slug", "title", "publishedAt"],
+      fields: ["slug", "title", "publishedAt", "subtitle"],
       populate: { image: { fields: ["url"] } },
-      pagination: { pageSize: 6 },
+      pagination: { pageSize },
       sort: ["publishedAt:desc"],
     },
     "reviews"

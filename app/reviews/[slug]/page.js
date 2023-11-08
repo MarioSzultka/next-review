@@ -1,5 +1,5 @@
 import Heading from "@/components/Heading";
-import Image from "@/components/Images/Image";
+import Picture from "@/components/Images/Picture";
 
 // library
 import { getReview, getSlugs } from "@/library/reviews";
@@ -30,7 +30,7 @@ export async function generateMetadata(props) {
 
 const ReviewPage = async ({ params: { slug } }) => {
   const review = await getReview(slug);
-  const { title, date, image, body } = review;
+  const { title, date, image, body, subtitle } = review;
 
   return (
     <>
@@ -40,7 +40,8 @@ const ReviewPage = async ({ params: { slug } }) => {
 
         <ShareButtons />
       </div>
-      <Image src={image} />
+      <p className="fw-bold">{subtitle}</p>
+      <Picture src={image} index={0} />
       <article
         dangerouslySetInnerHTML={{ __html: body }}
         className={` d-flex flex-column scroll-py-2 text`}

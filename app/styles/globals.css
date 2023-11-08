@@ -6,3 +6,8 @@ article.text > p {
   font-size: 1.2rem;
   padding: 8px 0px;
 }
+
+article.text > h1 {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
