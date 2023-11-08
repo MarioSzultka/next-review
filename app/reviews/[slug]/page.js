@@ -11,8 +11,8 @@ import ShareButtons from "@/components/Buttons/ShareButtons";
 // to jest do tworzenia statycznych stron aby nie przetwrzal na serwrze jak klient kliknie na dany link na stronie
 export async function generateStaticParams() {
   //https://www.udemy.com/course/nextjs-by-example/learn/lecture/37979362#notes
-  const files = await getSlugs("./content/reviews", ".md");
-  return files.map((file) => ({ slug: file }));
+
+  return await getSlugs("reviews");
 }
 
 // To jest generowanie statycznych tytulow strony jezeli masz [cos w tym podane jak slug]
@@ -43,7 +43,7 @@ const ReviewPage = async ({ params: { slug } }) => {
       <Image src={image} />
       <article
         dangerouslySetInnerHTML={{ __html: body }}
-        className="w-auto mx-auto prose prose-slate py-2"
+        className={` d-flex flex-column scroll-py-2 text`}
       />
     </>
   );
