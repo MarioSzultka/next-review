@@ -4,16 +4,22 @@ import Heading from "@/components/Heading";
 import Picture from "@/components/Images/Picture";
 import { getReviews } from "@/library/reviews";
 
-const HomePage = async () => {
-  const data = await getReviews(3);
+//export const revalidate = 30; // co 30 sekund strona sie re-renderuje tzn. na poczatku klient dostaje strone statyczna a po 30 sekundach i tak sie od nowa zaladuje
+//export const revalidate = 30;
+//export const dynamic = "force-dynamic";
 
+const HomePage = async () => {
+  const reviews = await getReviews(3);
+  console.log(
+    `[HomePage] Title rendering:`,
+    reviews.map((item) => item.title).join(", ")
+  );
   return (
     <>
       <Heading>Indie Gamer</Heading>
       <p>Only the best indie games, reviewed for you</p>
       <div className="row g-2">
-        {data.map(({ title, image, date, subtitle }, index) => {
-          console.log(["index to:"], index);
+        {reviews.map(({ title, image, date, subtitle, slug }, index) => {
           return (
             <div
               key={index}
@@ -22,7 +28,7 @@ const HomePage = async () => {
               <div className="rounded border-2">
                 <p className="font-bold text-md py-2">{date}</p>
                 <Link
-                  href="/reviews/hollow-knight"
+                  href={`/reviews/${slug}`}
                   className="flex flex-col sm:flex-row sm:items-center"
                 >
                   <Image

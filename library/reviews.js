@@ -10,7 +10,11 @@ async function fetchReviews(parameter, collectionName) {
     encodeValuesOnly: true, // prettify URL
   });
   const url = `${CMS_URL}/api/${collectionName}?${query}`;
-  const response = await fetch(url);
+  const response = await fetch(url, {
+    next: {
+      revalidate: 30, // seconds
+    },
+  });
   //console.log(["Odpowiedz response:"], response.ok);
 
   if (!response.ok) {
@@ -51,6 +55,10 @@ export async function getReview(slug) {
     },
     "reviews"
   );
+
+  if (data.length === 0) {
+    return null;
+  }
 
   const item = data[0];
 

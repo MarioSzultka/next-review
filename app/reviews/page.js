@@ -14,9 +14,15 @@ export const metadata = {
   title: "Reviews Pages",
 };
 
+//export const revalidate = 30;
+//export const dynamic = "force-dynamic";
+
 const ReviewsPage = async () => {
   const reviews = await getReviews(6);
-  console.log(["Reviews to:"], reviews);
+  /* console.log(
+    `[ReviewsPage] rendering:`,
+    reviews.map((item) => item.title).join(", ")
+  ); */
   return (
     <>
       <Heading>Reviews</Heading>
