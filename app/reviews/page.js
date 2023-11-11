@@ -20,7 +20,7 @@ export const metadata = {
 const ReviewsPage = async () => {
   const reviews = await getReviews(6);
   /* console.log(
-    `[ReviewsPage] rendering:`,
+    `[Reviews-Page] Title rendering:`,
     reviews.map((item) => item.title).join(", ")
   ); */
   return (

@@ -11,6 +11,7 @@ async function fetchReviews(parameter, collectionName) {
   });
   const url = `${CMS_URL}/api/${collectionName}?${query}`;
   const response = await fetch(url, {
+    /*  cache: "no-store", */
     next: {
       revalidate: 30, // seconds
     },

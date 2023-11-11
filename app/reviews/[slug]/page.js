@@ -14,21 +14,21 @@ import ShareButtons from "@/components/Buttons/ShareButtons";
 
 export async function generateStaticParams() {
   const slugs = await getSlugs("reviews");
-  console.log(`[Statyczna strona generowanie]`, slugs.slug);
+  //console.log(`[Statyczna strona generowanie]`, slugs.slug);
   return slugs;
 }
 
 // To jest generowanie statycznych tytulow strony jezeli masz [cos w tym podane jak slug]
 //https://www.udemy.com/course/nextjs-by-example/learn/lecture/37979378#questions
 export async function generateMetadata({ params: { slug } }) {
-  console.log(["--//generateMetadata SLUG to jest:", slug]);
+  //console.log(["--//generateMetadata SLUG to jest:", slug]);
   const review = await getReview(slug);
 
   if (!review) {
     return notFound();
   }
 
-  console.log(`[TITLE w SLUG to jest]`, review.title);
+  //console.log(`[TITLE w SLUG to jest]`, review.title);
   return {
     title: review.title,
   };
